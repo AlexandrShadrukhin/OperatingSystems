@@ -4,22 +4,84 @@
 #include "commands/ExitCommand.h"
 #include "commands/HelpCommand.h"
 #include <iostream>
+#include <chrono>
 #include <map>
 #include <memory>
 #include <sstream>
 #include <unistd.h>   // For fork() and execvp()
 #include <vector>
+#include <readline/readline.h>
+#include <readline/history.h>
+#include <filesystem> // For directory listing
 
 using namespace std;
 using namespace chrono;
+namespace fs = std::filesystem;
 
 namespace monolith::app {
 
+// Function to generate completion matches
+char* commandCompletion(const char* text, int state) {
+  static vector<string> matches;
+  static size_t matchIndex = 0;
+
+  if (state == 0) {
+    matches.clear();
+    matchIndex = 0;
+
+    string textStr(text);
+    string dirPath = ".";
+    string prefix;
+
+    // Determine the directory path and prefix
+    size_t lastSlash = textStr.find_last_of('/');
+    if (lastSlash != string::npos) {
+      dirPath = textStr.substr(0, lastSlash + 1);
+      prefix = textStr.substr(lastSlash + 1);
+    } else {
+      prefix = textStr;
+    }
+
+    try {
+      for (const auto& entry : fs::directory_iterator(dirPath)) {
+        string name = entry.path().filename().string();
+        if (name.find(prefix) == 0) {
+          matches.push_back(dirPath + name);
+        }
+      }
+    } catch (const std::exception&) {
+    }
+  }
+
+  if (matchIndex < matches.size()) {
+    return strdup(matches[matchIndex++].c_str());
+  }
+
+  return nullptr;
+}
+
+void initializeReadline() {
+  rl_attempted_completion_function = [](const char* text, int start, int end) -> char** {
+    return rl_completion_matches(text, commandCompletion);
+  };
+}
+
 string readLine() {
-  string str;
-  cout << "shell >> ";
-  getline(cin, str);
-  return str;
+  char* input = readline("shell >> ");
+  if (!input) {
+    cout << "\nGoodbye!\n";
+    exit(0);
+  }
+
+  string line(input);
+  free(input);
+
+  // Add to history
+  if (!line.empty()) {
+    add_history(line.c_str());
+  }
+
+  return line;
 }
 
 vector<string> parseStr(const string& line) {
@@ -88,6 +150,7 @@ void loop() {
 }
 
 int main() {
-    cout << "Добро пожаловать в мою оболочку командной строки!!! \n" ;
-    monolith::app::loop();
+  cout << "Добро пожаловать в мою оболочку командной строки!!! \n";
+  monolith::app::initializeReadline();
+  monolith::app::loop();
 }
