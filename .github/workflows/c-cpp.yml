@@ -1,0 +1,52 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y clang-tidy clang-format cmake build-essential libreadline-dev
+
+      - name: Run clang-tidy
+        run: |
+          mkdir -p build
+          cd build
+          cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+          cd ..
+          clang-tidy -p build $(find . -name '*.cpp')
+
+      - name: Run clang-format check
+        run: |
+          if [ "$(clang-format --version)" ]; then
+            find . -name "*.cpp" -o -name "*.h" | xargs clang-format -i
+            git diff --exit-code
+          else
+            echo "clang-format is not installed!"
+            exit 1
+          fi
+
+      - name: Build with CMake
+        run: |
+          mkdir -p build
+          cd build
+          cmake ..
+          cmake --build .
+
+      - name: Run tests
+        run: |
+          cd build
+          ctest --output-on-failure
