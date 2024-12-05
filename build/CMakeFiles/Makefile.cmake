@@ -99,7 +99,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/dedup_benchmark-app.dir/DependInfo.cmake"
   "CMakeFiles/search_name_benchmark-app.dir/DependInfo.cmake"
   "CMakeFiles/multi_benchmark-app.dir/DependInfo.cmake"
-  "CMakeFiles/clang-format.dir/DependInfo.cmake"
   "CMakeFiles/MonolithShellTests.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"

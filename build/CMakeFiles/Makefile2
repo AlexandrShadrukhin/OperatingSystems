@@ -92,7 +92,6 @@ clean: CMakeFiles/Shell.dir/clean
 clean: CMakeFiles/dedup_benchmark-app.dir/clean
 clean: CMakeFiles/search_name_benchmark-app.dir/clean
 clean: CMakeFiles/multi_benchmark-app.dir/clean
-clean: CMakeFiles/clang-format.dir/clean
 clean: CMakeFiles/MonolithShellTests.dir/clean
 clean: _deps/googletest-build/clean
 .PHONY : clean
@@ -232,7 +231,7 @@ CMakeFiles/Shell.dir/clean:
 CMakeFiles/dedup_benchmark-app.dir/all: CMakeFiles/MonolithShellLib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dedup_benchmark-app.dir/build.make CMakeFiles/dedup_benchmark-app.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dedup_benchmark-app.dir/build.make CMakeFiles/dedup_benchmark-app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=13,14 "Built target dedup_benchmark-app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=12,13 "Built target dedup_benchmark-app"
 .PHONY : CMakeFiles/dedup_benchmark-app.dir/all
 
 # Build rule for subdir invocation for target.
@@ -263,7 +262,7 @@ CMakeFiles/dedup_benchmark-app.dir/clean:
 CMakeFiles/search_name_benchmark-app.dir/all: CMakeFiles/MonolithShellLib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/search_name_benchmark-app.dir/build.make CMakeFiles/search_name_benchmark-app.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/search_name_benchmark-app.dir/build.make CMakeFiles/search_name_benchmark-app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=25,26 "Built target search_name_benchmark-app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=24,25 "Built target search_name_benchmark-app"
 .PHONY : CMakeFiles/search_name_benchmark-app.dir/all
 
 # Build rule for subdir invocation for target.
@@ -294,7 +293,7 @@ CMakeFiles/search_name_benchmark-app.dir/clean:
 CMakeFiles/multi_benchmark-app.dir/all: CMakeFiles/MonolithShellLib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_benchmark-app.dir/build.make CMakeFiles/multi_benchmark-app.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_benchmark-app.dir/build.make CMakeFiles/multi_benchmark-app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=23,24 "Built target multi_benchmark-app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=22,23 "Built target multi_benchmark-app"
 .PHONY : CMakeFiles/multi_benchmark-app.dir/all
 
 # Build rule for subdir invocation for target.
@@ -317,37 +316,6 @@ CMakeFiles/multi_benchmark-app.dir/codegen:
 CMakeFiles/multi_benchmark-app.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_benchmark-app.dir/build.make CMakeFiles/multi_benchmark-app.dir/clean
 .PHONY : CMakeFiles/multi_benchmark-app.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/clang-format.dir
-
-# All Build rule for target.
-CMakeFiles/clang-format.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-format.dir/build.make CMakeFiles/clang-format.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-format.dir/build.make CMakeFiles/clang-format.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=12 "Built target clang-format"
-.PHONY : CMakeFiles/clang-format.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/clang-format.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/clang-format.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles 0
-.PHONY : CMakeFiles/clang-format.dir/rule
-
-# Convenience name for target.
-clang-format: CMakeFiles/clang-format.dir/rule
-.PHONY : clang-format
-
-# codegen rule for target.
-CMakeFiles/clang-format.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-format.dir/build.make CMakeFiles/clang-format.dir/codegen
-.PHONY : CMakeFiles/clang-format.dir/codegen
-
-# clean rule for target.
-CMakeFiles/clang-format.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-format.dir/build.make CMakeFiles/clang-format.dir/clean
-.PHONY : CMakeFiles/clang-format.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/MonolithShellTests.dir
@@ -389,7 +357,7 @@ CMakeFiles/MonolithShellTests.dir/clean:
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=15,16 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=14,15 "Built target gmock"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -421,7 +389,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletes
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=17,18 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=16,17 "Built target gmock_main"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -452,7 +420,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=19,20 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=18,19 "Built target gtest"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -483,7 +451,7 @@ _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=21,22 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles --progress-num=20,21 "Built target gtest_main"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.

@@ -238,19 +238,6 @@ multi_benchmark-app/fast:
 .PHONY : multi_benchmark-app/fast
 
 #=============================================================================
-# Target rules for targets named clang-format
-
-# Build rule for target.
-clang-format: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clang-format
-.PHONY : clang-format
-
-# fast build rule for target.
-clang-format/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-format.dir/build.make CMakeFiles/clang-format.dir/build
-.PHONY : clang-format/fast
-
-#=============================================================================
 # Target rules for targets named MonolithShellTests
 
 # Build rule for target.
@@ -592,7 +579,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... clang-format"
 	@echo "... MonolithShellLib"
 	@echo "... MonolithShellTests"
 	@echo "... Shell"

@@ -3,7 +3,6 @@
 /Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles/dedup_benchmark-app.dir
 /Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles/search_name_benchmark-app.dir
 /Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles/multi_benchmark-app.dir
-/Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles/clang-format.dir
 /Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles/MonolithShellTests.dir
 /Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles/test.dir
 /Users/AlexandrShadrukhin/Documents/OperatingSystems/build/CMakeFiles/edit_cache.dir
