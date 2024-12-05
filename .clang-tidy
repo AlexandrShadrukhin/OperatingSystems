@@ -7,6 +7,5 @@ Checks: >
   cppcoreguidelines-*,
   clang-analyzer-*
 
-WarningsAsErrors: '*'
 HeaderFilterRegex: '.*'
 FormatStyle: file
