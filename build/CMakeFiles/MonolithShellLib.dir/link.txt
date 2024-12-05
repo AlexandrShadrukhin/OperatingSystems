@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libMonolithShellLib.a CMakeFiles/MonolithShellLib.dir/source/monolith/commands/CdCommand.cpp.o CMakeFiles/MonolithShellLib.dir/source/monolith/commands/ExitCommand.cpp.o CMakeFiles/MonolithShellLib.dir/source/monolith/commands/HelpCommand.cpp.o CMakeFiles/MonolithShellLib.dir/source/monolith/commands/utility.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libMonolithShellLib.a
