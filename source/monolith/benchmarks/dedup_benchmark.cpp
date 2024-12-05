@@ -17,32 +17,34 @@ void dedup(std::vector<std::string> &data) {
     data = std::move(deduplicated);
 }
 
-//int main(int argc, char *argv[]) {
-//  if (argc < 3) {
-//    std::cerr << "Введите: " << argv[0]
-//              << " <количество итераций> <размер массива>" << std::endl;
-//    return 1;
-//  }
-//
-//  int iterations = std::stoi(argv[1]);
-//  int size = std::stoi(argv[2]);
-//
-//  std::vector<std::string> data;
-//  for (int i = 0; i < size; ++i) {
-//    data.push_back("элемент" + std::to_string(i % 10));
-//  }
-//
-//  auto start = std::chrono::high_resolution_clock::now();
-//
-//  for (int i = 0; i < iterations; ++i) {
-//    dedup(data);
-//  }
-//
-//  auto end = std::chrono::high_resolution_clock::now();
-//  std::chrono::duration<double> elapsed = end - start;
-//
-//  std::cout << "Выполнено за " << iterations
-//            << " итераций и: " << elapsed.count() << " с" << std::endl;
-//
-//  return 0;
-//}
+#ifndef TESTING_MODE
+int main(int argc, char *argv[]) {
+  if (argc < 3) {
+    std::cerr << "Введите: " << argv[0]
+              << " <количество итераций> <размер массива>" << std::endl;
+    return 1;
+  }
+
+  int iterations = std::stoi(argv[1]);
+  int size = std::stoi(argv[2]);
+
+  std::vector<std::string> data;
+  for (int i = 0; i < size; ++i) {
+    data.push_back("элемент" + std::to_string(i % 10));
+  }
+
+  auto start = std::chrono::high_resolution_clock::now();
+
+  for (int i = 0; i < iterations; ++i) {
+    dedup(data);
+  }
+
+  auto end = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> elapsed = end - start;
+
+  std::cout << "Выполнено за " << iterations
+            << " итераций и: " << elapsed.count() << " с" << std::endl;
+
+  return 0;
+}
+#endif
