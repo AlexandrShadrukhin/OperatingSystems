@@ -37,7 +37,7 @@ set(BENCHMARK_SOURCES
 # Тесты
 file(GLOB_RECURSE TEST_SOURCES CONFIGURE_DEPENDS ${TEST_PATH}/*.cpp)
 
-# Либа
+# Создаем библиотеку
 add_library(MonolithShellLib STATIC ${MONOLITH_LIB_SOURCES})
 target_include_directories(MonolithShellLib PUBLIC ${MONOLITH_INCLUDE_PATH})
 
@@ -67,22 +67,21 @@ enable_testing()
 # Тесты
 add_executable(MonolithShellTests ${TEST_SOURCES})
 
-target_compile_definitions(MonolithShellTests PRIVATE TESTING_MODE)
+# Настройки для тестов
+target_compile_definitions(MonolithShellTests PRIVATE TESTING_MODE) # Определяем TESTING_MODE для тестов
 target_include_directories(MonolithShellTests PRIVATE ${MONOLITH_INCLUDE_PATH} ${TEST_PATH})
-target_link_directories(MonolithShellTests PRIVATE /opt/homebrew/opt/readline/lib)
 target_include_directories(MonolithShellTests PRIVATE /opt/homebrew/opt/readline/include)
-
-# Определяем TESTING_MODE для исключения main() в бенчмарках
-target_compile_definitions(MonolithShellTests PRIVATE TESTING_MODE)
+target_link_directories(MonolithShellTests PRIVATE /opt/homebrew/opt/readline/lib)
 
 # Линковка тестов
 target_link_libraries(
         MonolithShellTests PRIVATE
-        MonolithShellLib
-        gtest
-        gtest_main
-        pthread
-        readline
+        MonolithShellLib # Основная библиотека
+        gtest # Google Test
+        gtest_main # Main для Google Test
+        pthread # Поддержка потоков
+        readline # Подключаем readline
 )
 
+# Регистрируем тесты
 add_test(NAME MonolithShellTests COMMAND MonolithShellTests)
