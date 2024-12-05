@@ -1,8 +1,7 @@
-WarningsAsErrors: ''
 Checks: >
   -*,
   modernize-*,
   readability-*,
-  cppcoreguidelines-*,
-  performance-*,
   clang-analyzer-*
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'

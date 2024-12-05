@@ -41,3 +41,14 @@ target_link_libraries(Shell PRIVATE MonolithShellLib readline)
 target_link_libraries(dedup_benchmark-app PRIVATE MonolithShellLib)
 target_link_libraries(search_name_benchmark-app PRIVATE MonolithShellLib)
 target_link_libraries(multi_benchmark-app PRIVATE MonolithShellLib)
+
+find_program(CLANG_TIDY_EXE NAMES clang-tidy)
+if(CLANG_TIDY_EXE)
+    set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_EXE};--config-file=${CMAKE_SOURCE_DIR}/.clang-tidy")
+endif()
+
+add_custom_target(
+        clang-format
+        COMMAND clang-format -i -style=file ${MONOLITH_LIB_SOURCES} ${MONOLITH_APP_SOURCES} ${BENCHMARK_SOURCES}
+        COMMENT "Running clang-format on source files"
+)
