@@ -35,7 +35,9 @@ add_executable(dedup_benchmark-app ${MONOLITH_SOURCE_PATH}/monolith/benchmarks/d
 add_executable(search_name_benchmark-app ${MONOLITH_SOURCE_PATH}/monolith/benchmarks/search_name_benchmark.cpp)
 add_executable(multi_benchmark-app ${MONOLITH_SOURCE_PATH}/monolith/benchmarks/multi_benchmark.cpp)
 
-target_link_libraries(Shell PRIVATE MonolithShellLib)
+include_directories(/usr/include)
+
+target_link_libraries(Shell PRIVATE MonolithShellLib readline)
 target_link_libraries(dedup_benchmark-app PRIVATE MonolithShellLib)
 target_link_libraries(search_name_benchmark-app PRIVATE MonolithShellLib)
 target_link_libraries(multi_benchmark-app PRIVATE MonolithShellLib)
