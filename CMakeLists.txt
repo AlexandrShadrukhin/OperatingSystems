@@ -67,6 +67,7 @@ enable_testing()
 # Тесты
 add_executable(MonolithShellTests ${TEST_SOURCES})
 
+target_compile_definitions(MonolithShellTests PRIVATE TESTING_MODE)
 target_include_directories(MonolithShellTests PRIVATE ${MONOLITH_INCLUDE_PATH} ${TEST_PATH})
 target_link_directories(MonolithShellTests PRIVATE /opt/homebrew/opt/readline/lib)
 target_include_directories(MonolithShellTests PRIVATE /opt/homebrew/opt/readline/include)
