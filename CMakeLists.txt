@@ -52,23 +52,3 @@ add_custom_target(
         COMMAND clang-format -i -style=file ${MONOLITH_LIB_SOURCES} ${MONOLITH_APP_SOURCES} ${BENCHMARK_SOURCES}
         COMMENT "Running clang-format on source files"
 )
-
-# Подключаем GoogleTest через FetchContent
-include(FetchContent)
-FetchContent_Declare(
-        googletest
-        URL https://github.com/google/googletest/archive/5376968f6948923e2411081fd9372e71a59d8e77.zip
-)
-FetchContent_MakeAvailable(googletest)
-
-enable_testing()
-
-# Добавляем тестовый исполняемый файл
-add_executable(benchmark_tests tests/benchmark_tests.cpp)
-
-# Линкуем GoogleTest
-target_link_libraries(benchmark_tests gtest_main)
-
-# Добавляем тесты в ctest
-add_test(NAME DedupBenchmarkTest COMMAND benchmark_tests --gtest_filter=DedupBenchmarkTest.*)
-add_test(NAME SearchNameBenchmarkTest COMMAND benchmark_tests --gtest_filter=SearchNameBenchmarkTest.*)

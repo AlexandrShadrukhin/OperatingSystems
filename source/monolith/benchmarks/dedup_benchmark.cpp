@@ -1,23 +1,27 @@
-#include <iostream>
-#include <vector>
-#include <unordered_set>
 #include <chrono>
+#include <iostream>
 #include <string>
+#include <unordered_set>
+#include <vector>
 //./dedup_benchmark 1000 100000
-void dedup(std::vector<std::string>& data) {
-  std::unordered_set<std::string> unique_elements;
-  std::vector<std::string> deduplicated;
+void dedup(std::vector<std::string> &data) {
+    std::unordered_set<std::string> unique_elements;
+    std::vector<std::string> deduplicated;
 
-  for (const auto& elem : data) {
-    if (unique_elements.insert(elem).second) {
-      deduplicated.push_back(elem);
+    for (const auto &elem : data) {
+        if (unique_elements.insert(elem).second) {
+            deduplicated.push_back(elem);
+        }
     }
-  }
+
+    data = std::move(deduplicated);
 }
 
-int main(int argc, char* argv[]) {
+#ifndef TESTING_MODE
+int main(int argc, char *argv[]) {
   if (argc < 3) {
-    std::cerr << "Введите: " << argv[0] << " <количество итераций> <размер массива>" << std::endl;
+    std::cerr << "Введите: " << argv[0]
+              << " <количество итераций> <размер массива>" << std::endl;
     return 1;
   }
 
@@ -38,7 +42,9 @@ int main(int argc, char* argv[]) {
   auto end = std::chrono::high_resolution_clock::now();
   std::chrono::duration<double> elapsed = end - start;
 
-  std::cout << "Выполнено за " << iterations << " итераций и: " << elapsed.count() << " с" << std::endl;
+  std::cout << "Выполнено за " << iterations
+            << " итераций и: " << elapsed.count() << " с" << std::endl;
 
   return 0;
 }
+#endif
