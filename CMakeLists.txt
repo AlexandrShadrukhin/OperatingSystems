@@ -69,4 +69,3 @@ target_link_libraries(benchmark_tests gtest_main)
 
 add_test(NAME DedupBenchmarkTest COMMAND benchmark_tests --gtest_filter=DedupBenchmarkTest.*)
 add_test(NAME SearchNameBenchmarkTest COMMAND benchmark_tests --gtest_filter=SearchNameBenchmarkTest.*)
-set_tests_properties(SearchNameBenchmarkTest PROPERTIES WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
