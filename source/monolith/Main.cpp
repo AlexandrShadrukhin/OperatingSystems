@@ -13,7 +13,6 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include <filesystem> // For directory listing
-//set_tests_properties(SearchNameBenchmarkTest PROPERTIES WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 using namespace std;
 using namespace chrono;
 namespace fs = std::filesystem;
