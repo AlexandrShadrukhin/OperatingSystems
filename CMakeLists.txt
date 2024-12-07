@@ -4,7 +4,7 @@ project(MonolithShell)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 get_filename_component(MONOLITH_INCLUDE_PATH "." ABSOLUTE)
 get_filename_component(MONOLITH_SOURCE_PATH "./source" ABSOLUTE)
@@ -69,3 +69,4 @@ target_link_libraries(benchmark_tests gtest_main)
 
 add_test(NAME DedupBenchmarkTest COMMAND benchmark_tests --gtest_filter=DedupBenchmarkTest.*)
 add_test(NAME SearchNameBenchmarkTest COMMAND benchmark_tests --gtest_filter=SearchNameBenchmarkTest.*)
+set_tests_properties(SearchNameBenchmarkTest PROPERTIES WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
