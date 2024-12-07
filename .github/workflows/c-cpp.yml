@@ -53,4 +53,4 @@ jobs:
         run: |
           cd build
           ls -L
-          ctest --output-on-failure
+          ./benchmark_tests
