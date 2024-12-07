@@ -76,7 +76,6 @@ string readLine() {
   string line(input);
   free(input);
 
-  // Add to history
   if (!line.empty()) {
     add_history(line.c_str());
   }
