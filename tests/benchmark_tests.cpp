@@ -4,13 +4,13 @@
 #include <string>
 
 TEST(DedupBenchmarkTest, RunsSuccessfully) {
-    int ret = std::system("./dedup_benchmark 1000 10000");
+    int ret = std::system("./dedup_benchmark-app 1000 10000");
     EXPECT_EQ(ret, 0) << "dedup_benchmark-app не завершился успешно";
 }
 
 TEST(SearchNameBenchmarkTest, RunsSuccessfully) {
     std::ostringstream commandStream;
-    commandStream << "./search_name_benchmark 10 ./ build.ninja";
+    commandStream << "./search_name_benchmark-app 10 ./ build.ninja";
     std::string command = commandStream.str();
     int ret = std::system(command.c_str());
     EXPECT_EQ(ret, 0) << "search_name_benchmark-app не завершился успешно";
