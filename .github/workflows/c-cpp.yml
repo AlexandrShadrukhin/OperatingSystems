@@ -21,26 +21,26 @@ jobs:
           sudo apt update
           sudo apt install -y clang-tidy clang-format cmake build-essential libreadline-dev
 
-#      - name: Run clang-tidy
-#        run: |
-#          mkdir -p build
-#          cd build
-#          cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-#          cd ..
-#          clang-tidy -p build $(find . -name '*.cpp') || true
+      - name: Run clang-tidy
+        run: |
+          mkdir -p build
+          cd build
+          cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+          cd ..
+          clang-tidy -p build $(find . -name '*.cpp') || true
 
-#      - name: Run clang-format check
-#        run: |
-#          if [ "$(clang-format --version)" ]; then
-#            find . -name "*.cpp" -o -name "*.h" | xargs clang-format -i
-#            if ! git diff --exit-code; then
-#              echo "clang-format made changes to the code. Please review and commit them."
-#              git diff
-#            fi
-#          else
-#            echo "clang-format is not installed!"
-#            exit 1
-#          fi
+      - name: Run clang-format check
+        run: |
+          if [ "$(clang-format --version)" ]; then
+            find . -name "*.cpp" -o -name "*.h" | xargs clang-format -i
+            if ! git diff --exit-code; then
+              echo "clang-format made changes to the code. Please review and commit them."
+              git diff
+            fi
+          else
+            echo "clang-format is not installed!"
+            exit 1
+          fi
 
       - name: Build with CMake
         run: |
